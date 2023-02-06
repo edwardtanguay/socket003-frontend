@@ -42,10 +42,11 @@ function Chat({ socket, username, room }: IProps) {
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
+          {messageList.map((messageContent, i) => {
             return (
               <div
                 className="message"
+				key={i}
                 id={username === messageContent.author ? "you" : "other"}
               >
                 <div>
