@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.scss';
-import io from 'socket.io-client';
+import * as io from 'socket.io-client';
 import Chat from './components/Chat';
 
-const socket = io('http://localhost::3620');
+const socket = io.connect('http://localhost::3620');
 
 function App() {
 	const [username, setUsername] = useState('');
